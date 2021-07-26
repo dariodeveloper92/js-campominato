@@ -9,7 +9,7 @@ console.log(giocatorepc)
 //variabili
 var min = 1;
 var max = 100;
-
+var numeroPc = (1 * 16);
 //16 volte
 var numeroPc1 = rndNumber(min, max);
 var numeroPc2 = rndNumber(min, max);
@@ -49,8 +49,11 @@ for (i = 1; i <= 84; i++) {
 
 
 //Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero.
-
-
+if (userNumber == numeroPc1) {
+    console.log('Partita terminata!')
+} else {
+    console.log('Continua');
+} 
 //La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti.
 
 
