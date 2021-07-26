@@ -4,78 +4,81 @@
 //variabili
 var min = 1;
 var max = 100;
+var bombe = []; 
 
 //16 volte
-var numeroPc1 = rndNumber(min, max);
-var numeroPc2 = rndNumber(min, max);
-var numeroPc3 = rndNumber(min, max);
-var numeroPc4 = rndNumber(min, max);
-var numeroPc5 = rndNumber(min, max);
-var numeroPc6 = rndNumber(min, max);
-var numeroPc7 = rndNumber(min, max);
-var numeroPc8 = rndNumber(min, max);
-var numeroPc9 = rndNumber(min, max);
-var numeroPc10 = rndNumber(min, max);
-var numeroPc11 = rndNumber(min, max);
-var numeroPc12 = rndNumber(min, max);
-var numeroPc13 = rndNumber(min, max);
-var numeroPc14 = rndNumber(min, max);
-var numeroPc15 = rndNumber(min, max);
-var numeroPc16 = rndNumber(min, max);
+let text = "";
+let i = 0;
+while (i < 16) {
+    var numeroPc = rndNumber(min, max);
+    bombe.push (numeroPc);
+    if(userNumber =  numeroPc) {
+        result = false;
+    }   else {
+        result = true;
+    }
+      i++;
+}
 
 //Funzione - Numero Casuale
 function rndNumber(min, max) {
-    for (i = 1; i <= 16; i++) {
-        return Math.floor(Math.random() * (max - min)) + min;
-    }
+    return Math.floor(Math.random() * (max - min)) + min;
 }
-console.log(numeroPc1, numeroPc2, numeroPc3, numeroPc4, numeroPc5, numeroPc6, numeroPc7, numeroPc8, numeroPc9, numeroPc10, numeroPc11, numeroPc12, numeroPc13, numeroPc14, numeroPc15, numeroPc16);
-
+console.log(bombe);
 
 //2) I numeri non possono essere duplicati.
 
 
 //3) In seguito deve chiedere all’utente (100 - 16(ovvero 84)) volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
 //Inserire 84 numeri 
-for (i = 1; i <= 84; i++) {
+for (i = 1; i <= 2; i++) {
     userNumber = parseInt(prompt('Inserisci un numero compreso tra 1 e 100'));
-    console.log('numero utente ' + userNumber);
-    document.write('numero utente ' + userNumber + '<br>' );
+    //console.log('numero utente ' + userNumber);
+    //document.write('numero utente ' + userNumber + '<br>' );
 } 
-
 //4) L’utente non può inserire più volte lo stesso numero.
-while(isNaN(userNumber)) //E' CORRETTO?
 
 //5) Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero.
+//CONDIZIONE " IF ":
+
+if (userNumber ==  numeroPc) {
+    console.log("Giocatore perde!");
+    
+}
+else {
+    console.log("Giocatore vince!");
+}
 
 //CONDIZIONE " SWITCH ":
-
-var operazione = prompt('Inserisci l/operzione da compiere');
+/*
+var operazione = risultato;
 var risultato = 0;
 
 switch(operazione) {
     case 'perso':
-        risultato = userNumber =  numeroPc1;
+        risultato = userNumber =  numeroPc + 'hai perso!';
         break;
-    case 'continua':
-        risultato = userNumber != numeroPc1;
+    case 'vinto':
+        risultato = userNumber != numeroPc + 'hai vinto!';
         break;
     default:
-        risultato = "Partita terminata!";
+        risultato = 'hai perso!' || 'hai vinto!';
 }
 
-console.log('Hai vinto!  ' + risultato);
-
-/*
-//CONDIZIONE " IF ":
-if (userNumber == numeroPc1) {
-    console.log('Partita terminata!')
-} else {
-    console.log('Continua');
-} 
+console.log('Il risultato è ' + risultato);
 */
 
-//6) La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti.
 
+
+//6) La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti.
+var numVietato = numeroPc;
+
+if (numVietato) {
+    console.log("Giocatore perde!");
+    
+}
+else {
+    console.log("Giocatore vince!");
+}
 
 //7) Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
