@@ -9,7 +9,7 @@ console.log(giocatorepc)
 //variabili
 var min = 1;
 var max = 100;
-var numeroPc = (1 * 16);
+
 //16 volte
 var numeroPc1 = rndNumber(min, max);
 var numeroPc2 = rndNumber(min, max);
@@ -27,9 +27,12 @@ var numeroPc13 = rndNumber(min, max);
 var numeroPc14 = rndNumber(min, max);
 var numeroPc15 = rndNumber(min, max);
 var numeroPc16 = rndNumber(min, max);
+
 //Funzione - Numero Casuale
 function rndNumber(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
+    for (i = 1; i <= 16; i++) {
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
 }
 console.log(numeroPc1, numeroPc2, numeroPc3, numeroPc4, numeroPc5, numeroPc6, numeroPc7, numeroPc8, numeroPc9, numeroPc10, numeroPc11, numeroPc12, numeroPc13, numeroPc14, numeroPc15, numeroPc16);
 
@@ -49,11 +52,33 @@ for (i = 1; i <= 84; i++) {
 
 
 //Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero.
+/*
+//CONDIZIONE " IF ":
 if (userNumber == numeroPc1) {
     console.log('Partita terminata!')
 } else {
     console.log('Continua');
 } 
+*/
+
+//CONDIZIONE " SWITCH ":
+
+var operazione = prompt('Inserisci l/operzione da compiere');
+var risultato = 0;
+
+switch(operazione) {
+    case 'perso':
+        risultato = userNumber =  numeroPc1;
+        break;
+    case 'continua':
+        risultato = userNumber != numeroPc1;
+        break;
+    default:
+        risultato = "Partita terminata!";
+}
+
+console.log('Hai vinto!  ' + risultato);
+
 //La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti.
 
 
