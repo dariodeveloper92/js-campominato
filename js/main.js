@@ -59,7 +59,6 @@ function controllo_bombe(lista_bombe, userNumber) {
 for (i = 1; i <= 2; i++) {//corregere 2 con 84
     userNumber = parseInt(prompt('Inserisci un numero compreso tra 1 e 100'));
     console.log('numero utente ' + userNumber);
-    document.write('numero utente ' + userNumber + '<br>' );
 } 
 //4) L’utente non può inserire più volte lo stesso numero.
 
@@ -93,8 +92,6 @@ switch(operazione) {
 console.log('Il risultato è ' + risultato);
 */
 
-
-
 //6) La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti.
 var numVietato = numeroPc;
 
@@ -107,3 +104,32 @@ else {
 }
 
 //7) Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
+
+
+
+//PARTE GRAFICA------------------------------------------------------------------------------------------------------------------------
+
+function creaCampo(celle) {
+
+    for(let i = 1; i <= celle; i++) {
+        let cella= `
+        <div data-cella="${i}" class="cella"></div>
+        `;
+
+        let templateCella = document.createElement('DIV');
+        templateCella.classList.add('quadrato');
+        templateCella.innerHTML = cella;
+        document.getElementById('campo').appendChild(templateCella);
+    }
+}
+
+document.getElementById('campo').addEventListener('click',
+    function(e) { //e = event
+        console.log(e.target.dataset.cella);
+        let element = document.querySelectorAll("data-cella='" + e.target.dataset.cella + "']"); 
+        console.log(element[0]);
+        element[0].classList.add("red");
+    }
+)
+
+creaCampo(100);
