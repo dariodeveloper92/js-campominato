@@ -132,4 +132,4 @@ document.getElementById('campo').addEventListener('click',
     }
 )
 
-creaCampo(100);
+creaCampo(98);
