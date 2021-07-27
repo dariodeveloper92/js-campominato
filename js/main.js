@@ -6,6 +6,8 @@ var min = 1;
 var max = 100;
 var lista_bombe = []; 
 var numBombe = 16;
+var maxMedium = 80;//LIVELLO MEDIO
+var maxHard = 50;// LIVELLO DIFFICILE
 
 ///creo array con le mie bombe : 16 bombe
 let text = "";
@@ -24,13 +26,14 @@ while (i < numBombe) {
 
 //SEZIONE FUNZIONI:
 
-//Funzione - Numero Casuale
+//con difficoltà 0 => tra 1 e 100
+//Funzione - Numero Casuale - EASY------------------------------------------------------------
 function rndNumber(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 console.log(lista_bombe);
 
-//Funzione controllo sulle bombe
+//Funzione controllo sulle bombe-------------------------------------------------------
 function controllo_bombe(lista_bombe, userNumber) {
     var find = false;
     for (let i = 0; i < lista_bombe.length; i++) {
@@ -73,3 +76,32 @@ document.getElementById('campo').addEventListener('click',
 )
 
 creaCampo(100);
+// FINE PARTE GRAFICA------------------------------------------------------------------------------------------------------------------------/
+
+//BONUS:------------------------------------------------------------------------------------------------------------------------ 
+
+//con difficoltà 1 => tra 1 e 80
+//Funzione - Numero Casuale - MEDIUM
+function rndNumber(min, maxMedium) {
+    return Math.floor(Math.random() * (maxMedium - min)) + min;
+}
+console.log(lista_bombe);
+
+//con difficoltà 2 => tra 1 e 50
+//Funzione - Numero Casuale - HARD
+function rndNumber(min, maxHard) {
+    return Math.floor(Math.random() * (maxHard - min)) + min;
+}
+console.log(lista_bombe);
+
+
+//FUNZIONE HAMBURGER
+function myFunction() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+  //FINE BONUS:------------------------------------------------------------------------------------------------------------------------/

@@ -24,7 +24,6 @@ h1 {
     width: 50vw;
     height: 50vw;
     margin: 0 auto;
-    /* border: 1px solid white; */
 }
 
 .quadrato {
@@ -54,4 +53,52 @@ h1 {
 .quadrato:hover {
     background-color: blue;
 }
-/* fine HOVER */
+/* FINE HOVER */
+
+/* RANGE LIVELLO */------------------------------------------------------------------------------------------------------
+
+.mobile-container {
+    max-width: 480px;
+    margin: auto;
+    background-color: #555;
+    height: 500px;
+    color: white;
+    border-radius: 10px;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+  }
+  
+  .topnav #myLinks {
+    display: none;
+  }
+  
+  .topnav a {
+    float: left;
+    color: white;
+    padding: 16px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a.icon {
+    float: right;
+    background-color: #04AA6D;
+  }
+  
+  .topnav a:hover {
+    background-color: red;
+    color: white;
+  }
+  
+  .active {
+    background-color: #04AA6D;
+    color: white;
+  }
+/* FINE RANGE LIVELLO */
+  
+  
+ 
