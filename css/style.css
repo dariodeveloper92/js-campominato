@@ -45,3 +45,13 @@ h1 {
     background-color: red;
 }
 /* FINE PARTE GRAFICIA */
+
+/* HOVER */
+.btn-play:hover {
+    transform: scale(1.5);
+}
+
+.quadrato:hover {
+    background-color: blue;
+}
+/* fine HOVER */

@@ -62,11 +62,12 @@ document.getElementById('campo').addEventListener('click',
         console.log(lista_bombe.includes(e.target.dataset.cella));
         console.log(lista_bombe);
         if (lista_bombe.includes(parseInt(e.target.dataset.cella))) {
-            alert('hai perso!');
+            alert('hai perso! Ritenta!!!');
         
         let element = document.querySelectorAll("[data-cella='" + e.target.dataset.cella + "']"); 
         console.log(element[0]);
         element[0].classList.add("red");
+        element[0].classList.add("btn-play");
     }
     }
 )
