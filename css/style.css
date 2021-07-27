@@ -40,4 +40,8 @@ h1 {
     height: 100%;
     border: 1px solid white;
 }
+
+.red {
+    background-color: red;
+}
 /* FINE PARTE GRAFICIA */
