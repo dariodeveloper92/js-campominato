@@ -15,7 +15,7 @@ let i = 0;
 while (i < numBombe) {
     var numeroPc = rndNumber(min, max);
     lista_bombe.push (numeroPc);
-    console.log(lista_bombe);
+    //console.log(lista_bombe);
     /*if(userNumber ==  numeroPc) {
         result = false;
     }   else {
@@ -31,14 +31,17 @@ while (i < numBombe) {
 function rndNumber(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
-console.log(lista_bombe);
+//console.log(lista_bombe);
 
 //Funzione controllo sulle bombe-------------------------------------------------------
 function controllo_bombe(lista_bombe, userNumber) {
-    var find = false;
+    var find;
     for (let i = 0; i < lista_bombe.length; i++) {
         if (lista_bombe[i] == userNumber) {
             find = true;
+        }
+        else {
+            find = false; 
         }
     }
     return find; 
@@ -63,7 +66,7 @@ document.getElementById('campo').addEventListener('click',
     function(e) { //e = event
         console.log(e.target.dataset.cella);
         console.log(lista_bombe.includes(e.target.dataset.cella));
-        console.log(lista_bombe);
+        //console.log(lista_bombe);
         if (lista_bombe.includes(parseInt(e.target.dataset.cella))) {
             alert('hai perso! Ritenta!!!');
         
@@ -75,7 +78,8 @@ document.getElementById('campo').addEventListener('click',
     }
 )
 
-creaCampo(100);
+creaCampo(max || maxMedium ||  maxHard);//SISTEMARE SCEGLI LIVELLO
+
 // FINE PARTE GRAFICA------------------------------------------------------------------------------------------------------------------------/
 
 //BONUS:------------------------------------------------------------------------------------------------------------------------ 
@@ -85,7 +89,7 @@ creaCampo(100);
 function rndNumber(min, maxMedium) {
     return Math.floor(Math.random() * (maxMedium - min)) + min;
 }
-console.log(lista_bombe);
+//console.log(lista_bombe);
 
 //con difficoltà 2 => tra 1 e 50
 //Funzione - Numero Casuale - HARD
@@ -105,3 +109,13 @@ function myFunction() {
     }
   }
   //FINE BONUS:------------------------------------------------------------------------------------------------------------------------/
+
+
+  //RESET
+  function reset_creaCampo() {
+      document.getElementById("creaCampo").innerHTML=''
+  }
+  //DA FARE:
+  //1) REFRESH DELLA PAGINA - REMOVE
+  //2) ATTIVAZIONE DIFFICOLTA - DIMUNISCONO LE CELLE
+  //3) INSERIRE I NUMERI NELLE CELLE
